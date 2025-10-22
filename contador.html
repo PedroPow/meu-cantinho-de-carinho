@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="favicon/android-chrome-192x192.png" type="image/x-icon">
+  <title>Contador até o Dia 888</title>
+  <link rel="stylesheet" href="estilo/style2.css">
+</head>
+<body>
+    <main>
+        <h1>Contador de Dias</h1>
+        <p>Aqui você podera acompanhar a contagem dos dias até o dia 888</p>
+    </main>
+  <span class="caixa">
+      <h1>Contador até o Dia 888</h1>
+      <div id="contador"></div>
+  </span>
+
+    <a href="index.html">
+            <main id="inicio">
+            <h1>Página inicial</h1>
+            <p>Clique aqui oara retornar a página inicial</p>
+            </main>
+    </a>
+
+  <script>
+    // 🟦 Defina aqui o dia inicial (exemplo: 1º de janeiro de 2023)
+    const dataInicial = new Date("2025-07-29");
+
+    // Calcula automaticamente a data do dia 888
+    const dataFinal = new Date(dataInicial.getTime() + (888 - 1) * 24 * 60 * 60 * 1000);
+
+    function atualizarContador() {
+      const hoje = new Date();
+      // Zera a hora para comparar apenas dias inteiros
+      const hojeSemHora = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate());
+      const diff = dataFinal - hojeSemHora;
+      const diasRestantes = Math.ceil(diff / (1000 * 60 * 60 * 24));
+
+      const contador = document.getElementById("contador");
+      if (diasRestantes > 0) {
+        contador.textContent = `Faltam ${diasRestantes} dias até o Dia 888`;
+      } else if (diasRestantes === 0) {
+        contador.textContent = "Hoje é o Dia 888!";
+      } else {
+        contador.textContent = `O Dia 888 foi há ${Math.abs(diasRestantes)} dias`;
+      }
+    }
+
+    atualizarContador();
+
+    // Atualiza automaticamente uma vez por dia
+    setInterval(atualizarContador, 1000 * 60 * 60 * 24);
+  </script>
+</body>
+</html>

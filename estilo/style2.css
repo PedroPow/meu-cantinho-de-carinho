@@ -1,0 +1,59 @@
+    body {
+      background: #f8c8dc;
+      color: #800040;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    h1 { font-size: 2em; margin-bottom: 0.5em; }
+    #contador {
+      font-size: 3em;
+      font-weight: bold;
+      color: #a05278;
+    }
+
+    main {
+        text-align: center;
+        background-color: #ffffffbe;
+        border-radius: 10px;
+        padding: 5px 130px;
+        margin: 20px ;
+    }
+
+    main > h1 {
+        font-size: 3em;
+    }
+
+    main :hover {
+        transform: scale(1.05);
+    }
+
+
+    #inicio {
+        text-align: center;
+        background-color: #ffffffbe;
+    }
+
+    #inicio {
+        padding: 5px 210px;
+        border-radius: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #800040;
+    }
+
+    .caixa {
+        border-radius: 10px;
+        padding: 20px 30px ;
+        background-color: #ffffffbe;
+        text-align: center;
+    }
+
+    .caixa :hover {
+        transform: scale(1.05)
+    }

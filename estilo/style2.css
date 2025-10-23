@@ -97,3 +97,69 @@
         visibility: visible !important;
         opacity: 1 !important;
         }
+
+
+#contador {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;      /* permite quebrar em linha menor em telas pequenas */
+  gap: 2em;
+  margin: 30px 0;
+}
+
+
+        .bloco {
+        display: flex;
+        flex-direction: column;    /* número em cima, letra embaixo */
+        align-items: center;
+        text-align: center;
+        }
+
+        .numero {
+        background-color: #510029d7;
+        color: #ff95c1;
+        font-size: 2.5rem;
+        font-weight: bold;
+        padding: 0.3em 0.7em;
+        border-radius: 999px;
+        transition: transform 0.6s ease;
+        }
+
+        .numero.flip {
+        transform: translateY(-20px);
+        opacity: 0;
+        }
+
+        .label {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #2b1d1d;
+        margin-top: 0.3em;
+        }
+
+
+        .flip {
+        position: relative;
+        background: #510029d7;
+        color: #ff95c1;
+        font-size: 2.5em;
+        font-weight: bold;
+        border-radius: 0.5em;
+        padding: 0.3em 0.5em;
+        overflow: hidden;
+        min-width: 2.8ch;
+        text-align: center;
+        perspective: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        #mensagem {
+        margin-top: 15px;
+        text-align: center;
+        color: #2b1d1dbf;
+        font-size: 1.1rem;
+        }

@@ -18,17 +18,31 @@
       <a href="index.html">Página inicial</a>
     </nav>
 
-      <aside>
+    <aside>  
+
         <div class="post">
+          
           <h1>Contador até o Dia 888</h1>
-          <div id="contador"></div>
+          
         </div>
+
+          <div id="contador">
+            <div class="bloco"><div class="flip" id="dias">000</div><span>Dias</span></div>
+            <div class="bloco"><div class="flip" id="horas">00</div><span>Horas</span></div>
+            <div class="bloco"><div class="flip" id="minutos">00</div><span>Minutos</span></div>
+            <div class="bloco"><div class="flip" id="segundos">00</div><span>Segundos</span></div>
+          </div>
+          <p id="mensagem"></p>
+
+
+
         <div class="post" id="curva">
           <picture>
             <source media="(min-width: 600px )" srcset="imagens/gatomax.png">
             <img src="https://preview.redd.it/trbtuvbrqtq81.jpg?width=640&crop=smart&auto=webp&s=04ca9929b1a633949b590327096fcdb3a40ccf8d" alt="">
           </picture>
         </div>
+
       </aside>
   
     <footer>
@@ -37,33 +51,66 @@
 
 
   <script>
-    // 🟦 Defina aqui o dia inicial (exemplo: 1º de janeiro de 2023)
-    const dataInicial = new Date("2025-07-29");
 
-    // Calcula automaticamente a data do dia 888
-    const dataFinal = new Date(dataInicial.getTime() + (888 - 1) * 24 * 60 * 60 * 1000);
+            // Dia 1
+            const dataInicial = new Date("2025-07-29");
 
-    function atualizarContador() {
-      const hoje = new Date();
-      // Zera a hora para comparar apenas dias inteiros
-      const hojeSemHora = new Date(hoje.getFullYear(), hoje.getMonth(), hoje.getDate());
-      const diff = dataFinal - hojeSemHora;
-      const diasRestantes = Math.ceil(diff / (1000 * 60 * 60 * 24));
+            // Dia 888 (calculado automaticamente)
+            const dataFinal = new Date(dataInicial.getTime() + (888 - 1) * 24 * 60 * 60 * 1000);
 
-      const contador = document.getElementById("contador");
-      if (diasRestantes > 0) {
-        contador.textContent = `Faltam ${diasRestantes} dias até o Dia 888`;
-      } else if (diasRestantes === 0) {
-        contador.textContent = "Hoje é o Dia 888!";
-      } else {
-        contador.textContent = `O Dia 888 foi há ${Math.abs(diasRestantes)} dias`;
-      }
-    }
+
+function animarFlip(elemento, novoValor) {
+  const valorAntigo = elemento.getAttribute("data-value") || elemento.textContent;
+
+  if (valorAntigo === String(novoValor)) return;
+
+  elemento.setAttribute("data-value", valorAntigo);
+  elemento.classList.remove("animate");
+  void elemento.offsetWidth; // reinicia a animação
+  elemento.classList.add("animate");
+
+  setTimeout(() => {
+    elemento.textContent = novoValor;
+    elemento.setAttribute("data-value", novoValor);
+  }, 400);
+}
+
+function atualizarContador() {
+  const agora = new Date();
+  const diff = dataFinal - agora;
+
+  const dias = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diff / (1000 * 60)) % 60);
+  const segundos = Math.floor((diff / 1000) % 60);
+
+  const d = document.getElementById("dias");
+  const h = document.getElementById("horas");
+  const m = document.getElementById("minutos");
+  const s = document.getElementById("segundos");
+  const msg = document.getElementById("mensagem");
+
+  if (diff > 0) {
+    animarFlip(d, dias);
+    animarFlip(h, String(horas).padStart(2, "0"));
+    animarFlip(m, String(minutos).padStart(2, "0"));
+    animarFlip(s, String(segundos).padStart(2, "0"));
+    msg.textContent = `Faltam ${dias} dias para o Dia 888 🎉`;
+  } else {
+    d.textContent = "0";
+    h.textContent = "00";
+    m.textContent = "00";
+    s.textContent = "00";
+    msg.textContent = "Hoje é o Dia 888! 🎊";
+  }
+}
+
+
 
     atualizarContador();
 
-    // Atualiza automaticamente uma vez por dia
-    setInterval(atualizarContador, 1000 * 60 * 60 * 24);
+      setInterval(atualizarContador, 1000); // atualiza a cada segundo
+
   </script>
 </body>
 </html>

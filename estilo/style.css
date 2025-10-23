@@ -50,7 +50,7 @@
             background-color: #fff;
             border-radius: 10px;
             padding: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
         }
@@ -59,7 +59,7 @@
             background-color: #fff;
             border-radius: 10px;
             padding: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 50px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
     }
@@ -88,7 +88,7 @@
             text-align: center;
             padding: 20px;
             color: #800040;
-            margin-top: 50px;
+            margin-top: 20px;
         }
 
         footer a {

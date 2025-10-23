@@ -1,59 +1,90 @@
-    body {
-      background: #f8c8dc;
-      color: #800040;
-      font-family: system-ui, sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      flex-direction: column;
-    }
-    h1 { font-size: 2em; margin-bottom: 0.5em; }
-    #contador {
-      font-size: 3em;
-      font-weight: bold;
-      color: #a05278;
-    }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            color: #4b2e2e;
+        }
 
-    main {
-        text-align: center;
-        background-color: #ffffffbe;
+        header {
+            background-color: #f8c8dc;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            color: #800040;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #ffe4ec;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #800040;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+            
+        }
+
+        main :hover {
+            transform: scale(1.05)
+        }
+
+        div :hover {
+            transform: none
+        }
+
+        .post {
+            background-color: #fff;
+            padding: 21px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.211);
+            text-align: center;
+            margin: 0px;
+        }
+
+        #curva {
+            border-radius: 0px 0px 10px 10px;
+        }
+        
+        .post h2 {
+            color: #a05278;
+        }
+        
+        footer {
+            background-color: #f8c8dc;
+            text-align: center;
+            padding: 1px;
+            color: #800040;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #800040;
+    
+        }
+
+        img {
+        max-width: 100%;
         border-radius: 10px;
-        padding: 5px 130px;
-        margin: 20px ;
-    }
+        margin-top: 15px;
+        }
 
-    main > h1 {
-        font-size: 3em;
-    }
-
-    main :hover {
-        transform: scale(1.05);
-    }
-
-
-    #inicio {
-        text-align: center;
-        background-color: #ffffffbe;
-    }
-
-    #inicio {
-        padding: 5px 210px;
+    aside {
+        background-color: var(--cor1);
+        padding: 10px;
         border-radius: 10px;
-    }
-
-    a {
-        text-decoration: none;
-        color: #800040;
-    }
-
-    .caixa {
-        border-radius: 10px;
-        padding: 20px 30px ;
-        background-color: #ffffffbe;
-        text-align: center;
-    }
-
-    .caixa :hover {
-        transform: scale(1.05)
+        font-size: 1.1em;
+        line-height: 30px;
     }

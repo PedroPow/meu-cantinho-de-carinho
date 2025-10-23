@@ -105,7 +105,7 @@
   flex-direction: row;       /* >>> coloca em linha horizontal <<< */
   justify-content: center;   /* centraliza no meio da tela */
   align-items: flex-end;     /* alinha pela base */
-  gap: 2em;                  /* espaço entre blocos */
+  gap: 0.3em;                  /* espaço entre blocos */
   margin-top: 40px;
 }
 
@@ -116,15 +116,7 @@
   text-align: center;
 }
 
-.numero {
-  background-color: #0b1a2d;
-  color: #4cc9f0;
-  font-size: 2.5rem;
-  font-weight: bold;
-  padding: 0.3em 0.7em;
-  border-radius: 999px;
-  transition: transform 0.6s ease;
-}
+
 
 .numero.flip {
   transform: translateY(-20px);
@@ -156,48 +148,6 @@
   align-items: center;
 }
 
-.flip .top,
-.flip .bottom {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0f172a;
-  border-radius: 0.5em;
-  backface-visibility: hidden;
-}
-
-.flip .top {
-  top: 0;
-  transform-origin: bottom;
-}
-
-.flip .bottom {
-  bottom: 0;
-  transform-origin: top;
-  transform: rotateX(90deg);
-}
-
-.flip.animate .top {
-  animation: flipTop 0.4s ease-in forwards;
-}
-
-.flip.animate .bottom {
-  animation: flipBottom 0.4s ease-out 0.4s forwards;
-}
-
-@keyframes flipTop {
-  0% { transform: rotateX(0deg); }
-  100% { transform: rotateX(-90deg); }
-}
-
-@keyframes flipBottom {
-  0% { transform: rotateX(90deg); }
-  100% { transform: rotateX(0deg); }
-}
 
 #mensagem {
   margin-top: 15px;
